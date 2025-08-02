@@ -1,4 +1,4 @@
-/* FirstStep 컴포넌트 전용 스타일 */
+/* FirstStep 컴포넌트 전용 스타일 - 첫 번째 이미지 디자인 기준 */
 
 .container {
     display: flex;
@@ -6,6 +6,9 @@
     margin: 0 auto;
     gap: 30px;
     align-items: flex-start;
+    padding: 20px;
+    min-height: 100vh;
+    background: #f8f9fa;
 }
 
 /* 홈으로 버튼 */
@@ -33,10 +36,11 @@
 /* 메인 콘텐츠 */
 .main-content {
     flex: 1;
-    background: rgba(240, 249, 255, 0.7);
+    background: white;
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
 }
 
 /* 헤더 */
@@ -100,8 +104,9 @@
     background: #f9fafb;
     padding: 20px;
     border-radius: 12px;
-    max-width: 300px;
+    max-width: 400px;
     width: 100%;
+    border: 1px solid #e5e7eb;
 }
 
 .selector-box label {
@@ -141,6 +146,7 @@
     border-radius: 12px;
     max-width: 400px;
     width: 100%;
+    border: 1px solid #e5e7eb;
 }
 
 .prompt-input-box label {
@@ -175,17 +181,20 @@
     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
 }
 
-/* 스크립트 영역 */
+/* 스크립트 영역 - 첫 번째 이미지와 동일하게 */
 .script-area {
-    background: #1f2937;
+    background: #374151;
     color: white;
     min-height: 200px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     padding: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .script-placeholder {
@@ -231,7 +240,7 @@
 
 .generate-btn {
     padding: 12px 24px;
-    background: #3b82f6;
+    background: #10b981;
     color: white;
     border: none;
     border-radius: 8px;
@@ -242,7 +251,7 @@
 }
 
 .generate-btn:hover:not(.disabled) {
-    background: #2563eb;
+    background: #059669;
     transform: translateY(-1px);
 }
 
@@ -258,6 +267,7 @@
     padding: 24px;
     border-radius: 12px;
     margin-bottom: 20px;
+    border: 1px solid #e5e7eb;
 }
 
 .timer-display {
@@ -336,16 +346,16 @@
     transform: translateY(-1px);
 }
 
-/* 사이드바 */
+/* 사이드바 - 첫 번째 이미지와 동일한 스타일 */
 .sidebar {
-    width: 380px;
+    width: 320px;
     flex-shrink: 0;
 }
 
 .guide-panel {
     background: white;
     border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     padding: 24px;
 }
 
@@ -388,6 +398,7 @@
     font-size: 14px;
     line-height: 1.5;
     text-align: justify;
+    margin: 0;
 }
 
 /* 학습 단계 */
@@ -502,45 +513,86 @@
     font-size: 13px;
 }
 
-            .effects-list li {
-                margin-bottom: 4px;
-            }
+.effects-list li {
+    margin-bottom: 4px;
+}
 
-            /* 에러 메시지 */
-            .error-message {
-                background: #fef2f2;
-                border: 1px solid #fecaca;
-                border-radius: 12px;
-                padding: 16px;
-                margin-bottom: 20px;
-            }
+/* 에러 메시지 */
+.error-message {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
 
-            .error-content {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 16px;
-            }
+.error-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
 
-            .error-text {
-                color: #dc2626;
-                font-size: 14px;
-                flex: 1;
-            }
+.error-text {
+    color: #dc2626;
+    font-size: 14px;
+    flex: 1;
+}
 
-            .error-retry-btn {
-                padding: 8px 16px;
-                background: #dc2626;
-                color: white;
-                border: none;
-                border-radius: 6px;
-                font-size: 12px;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.2s;
-            }
+.error-retry-btn {
+    padding: 8px 16px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
 
-            .error-retry-btn:hover {
-                background: #b91c1c;
-                transform: translateY(-1px);
-            } 
+.error-retry-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .sidebar {
+        width: 100%;
+        order: 2;
+    }
+    
+    .main-content {
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .step-indicator {
+        gap: 12px;
+    }
+    
+    .step {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+}

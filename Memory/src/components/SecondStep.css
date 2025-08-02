@@ -1,0 +1,494 @@
+/* SecondStep 컴포넌트 전용 스타일 */
+
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* 홈으로 버튼 */
+.home-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #666;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.home-btn:hover {
+    background: white;
+    color: #2563eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 메인 콘텐츠 */
+.main-content {
+    flex: 1;
+    background: rgba(240, 249, 255, 0.7);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+/* 헤더 */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: #1f2937;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.header p {
+    color: #6b7280;
+    font-size: 1.1rem;
+}
+
+/* 단계 표시기 */
+.step-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.step.active {
+    background: #f97316;
+    color: white;
+}
+
+.step.inactive {
+    background: #e5e7eb;
+    color: #9ca3af;
+}
+
+/* 네비게이션 버튼 */
+.navigation-buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nav-btn.prev {
+    background: #6b7280;
+    color: white;
+}
+
+.nav-btn.prev:hover {
+    background: #4b5563;
+    transform: translateY(-1px);
+}
+
+/* 점수 표시 */
+.score-display {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.score-box {
+    background: #f9fafb;
+    padding: 16px 24px;
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.score-label {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.score-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f97316;
+}
+
+/* 빈칸 채우기 영역 */
+.blank-fill-area {
+    background: #1f2937 !important;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #374151;
+}
+
+.script-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: white !important;
+    text-align: left;
+    background: #1f2937 !important;
+}
+
+.blank-container {
+    display: inline;
+    margin: 0 2px;
+}
+
+.blank-input {
+    padding: 6px 8px;
+    border: 2px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    min-width: 60px;
+    max-width: 80px;
+    background-color: white;
+    transition: all 0.2s;
+}
+
+.blank-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.blank-input.correct {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+}
+
+.blank-input.incorrect {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.blank-input.highlighted {
+    border-color: #fbbf24;
+    background-color: #fef3c7;
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px rgba(251, 191, 36, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.8); }
+    100% { box-shadow: 0 0 10px rgba(251, 191, 36, 0.5); }
+}
+
+.hint-text {
+    font-size: 12px;
+    color: #f97316;
+    font-weight: 500;
+}
+
+.answer-text {
+    font-size: 12px;
+    color: #10b981;
+    font-weight: 500;
+}
+
+/* 힌트 영역 */
+.hint-area {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 20px;
+}
+
+.hint-area h4 {
+    color: #92400e;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hint-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hint-item {
+    background: white;
+    border: 1px solid #fbbf24;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #92400e;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hint-item:hover {
+    background: #fef3c7;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hint-item:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 컨트롤 버튼들 */
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.control-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.control-btn.toggle-answers {
+    background: #8b5cf6;
+    color: white;
+}
+
+.control-btn.toggle-answers:hover {
+    background: #7c3aed;
+    transform: translateY(-1px);
+}
+
+.control-btn.complete {
+    background: #10b981;
+    color: white;
+}
+
+.control-btn.complete:hover:not(:disabled) {
+    background: #059669;
+    transform: translateY(-1px);
+}
+
+.control-btn.complete:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.control-btn.next {
+    background: #3b82f6;
+    color: white;
+}
+
+.control-btn.next:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+/* 사이드바 */
+.sidebar {
+    width: 320px;
+    flex-shrink: 0;
+}
+
+.guide-panel {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+
+.guide-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.guide-header h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1f2937;
+}
+
+/* 훈련 목적 */
+.purpose-section {
+    margin-bottom: 24px;
+}
+
+.section-title {
+    color: #6b7280;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.purpose-box {
+    background: #dbeafe;
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.purpose-box p {
+    color: #1e3a8a;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* 학습 단계 */
+.steps-section {
+    margin-bottom: 24px;
+}
+
+.step-item {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+}
+
+.step-item-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.step-number {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.step-number.blue { background: #3b82f6; }
+.step-number.orange { background: #f97316; }
+.step-number.green { background: #10b981; }
+.step-number.purple { background: #8b5cf6; }
+
+.step-name {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 14px;
+}
+
+.step-desc {
+    color: #6b7280;
+    font-size: 12px;
+    margin-left: 36px;
+}
+
+/* 훈련 방법론 */
+.methodology-section {
+    background: rgba(168, 85, 247, 0.05);
+    border: 1px solid #c4b5fd;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.methodology-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.methodology-title {
+    font-weight: bold;
+    color: #7c3aed;
+    font-size: 14px;
+    flex: 1;
+}
+
+.methodology-content {
+    padding: 0 20px 16px;
+    color: #374151;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.methodology-item {
+    margin-bottom: 8px;
+}
+
+/* 학습 효과 */
+.effects-section {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.effects-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.effects-title {
+    color: #166534;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.effects-list {
+    list-style: disc;
+    margin-left: 20px;
+    color: #065f46;
+    font-size: 13px;
+}
+
+.effects-list li {
+    margin-bottom: 4px;
+}
