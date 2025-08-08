@@ -12,6 +12,7 @@ interface FourthStepProps {
   };
   onComplete: (score: number) => void;
   onPrevious: () => void;
+  onGoHome: () => void;
 }
 
 interface AnalysisResult {
@@ -36,7 +37,7 @@ interface KeywordCheck {
   isManuallyChecked: boolean;
 }
 
-const FourthStep: React.FC<FourthStepProps> = ({ exerciseData, onComplete, onPrevious }) => {
+const FourthStep: React.FC<FourthStepProps> = ({ exerciseData, onComplete, onPrevious, onGoHome }) => {
   const [userText, setUserText] = useState('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
@@ -207,10 +208,10 @@ const FourthStep: React.FC<FourthStepProps> = ({ exerciseData, onComplete, onPre
       {/* 메인 콘텐츠 */}
       <div className="main-content">
         {/* 홈으로 버튼 */}
-        <a href="#" className="home-btn">
+        <button onClick={onGoHome} className="home-btn">
           <span>🏠</span>
           <span>홈으로</span>
-        </a>
+        </button>
         
         {/* 헤더 */}
         <div className="header">

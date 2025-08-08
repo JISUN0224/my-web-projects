@@ -177,6 +177,7 @@
     min-width: 60px;
     max-width: 80px;
     background-color: white;
+    color: #000000;
     transition: all 0.2s;
 }
 

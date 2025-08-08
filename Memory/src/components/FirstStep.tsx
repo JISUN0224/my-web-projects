@@ -46,6 +46,30 @@ const FirstStep: React.FC<FirstStepProps> = ({ onComplete, onGoHome }) => {
     };
   }, []);
 
+  // 홈으로 돌아가기 - 모든 상태 초기화
+  const handleGoHome = () => {
+    // 타이머 정리
+    if (timerIntervalRef.current) {
+      clearInterval(timerIntervalRef.current);
+      timerIntervalRef.current = null;
+    }
+    
+    // 모든 상태 초기화
+    setSelectedType('');
+    setSelectedLanguage('한국어');
+    setCustomPrompt('');
+    setIsGenerating(false);
+    setExerciseContent(null);
+    setError(null);
+    setTimeRemaining(0);
+    setIsTimerRunning(false);
+    setIsTimerPaused(false);
+    setTimerCompleted(false);
+    
+    // 부모 컴포넌트에 홈으로 이동 알림
+    onGoHome();
+  };
+
   // 문제 생성 함수
   const generateExercise = async () => {
     if (!selectedType) return;
@@ -220,7 +244,7 @@ Output only the text, no explanations.`;
       {/* 메인 콘텐츠 */}
       <div className="main-content">
         {/* 홈으로 버튼 */}
-        <button onClick={onGoHome} className="home-btn">
+        <button onClick={handleGoHome} className="home-btn">
           <span>🏠</span>
           <span>홈으로</span>
         </button>
